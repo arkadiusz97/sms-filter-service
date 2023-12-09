@@ -1,0 +1,32 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.0'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.github.arkadiusz97.sms_filter_service'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'com.h2database:h2'
+
+	implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+	implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+	implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
